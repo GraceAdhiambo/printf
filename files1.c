@@ -6,10 +6,12 @@
   */
 int print_char(va_list args)
 {
+	char_count = 0;
 	char c = (char) va_arg(args, int);
 
 	my_putchar(c);
-	return (1);
+	char_count++;
+	return (char_count);
 }
 /**
   * print_string - prints string
@@ -36,6 +38,9 @@ int print_string(va_list args)
   */
 int print_percent(va_list args)
 {
+	int count = o;
+
 	my_putchar('%');
-	return (1);
+	count++;
+	return (count);
 }

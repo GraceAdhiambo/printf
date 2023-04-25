@@ -22,18 +22,17 @@ int print_int(va_list args)
 		n = -n;
 	}
 
-	do
-	{
+	do {
 		buffer[--buffer_index] = '0' + (n % 10);
 		n /= 10;
 	} while (n != 0);
 
-	while (buffer[buffer_index] != '\0') 
+	while (buffer[buffer_index] != '\0')
 	{
 		my_putchar(buffer[buffer_index]);
 		num_chars_printed++;
 		buffer_index++;
 	}
 
-	return num_chars_printed;
+	return (num_chars_printed);
 }

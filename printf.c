@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	int num_chars_printed = 0;
-
+	int char_count = 0;
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -25,12 +25,12 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == 'c')
 			{
-				num_chars_printed += print_char(args);
+				char_count = print_char(args);
+				num_chars_printed += char_count;
 			}
 			else if (format[i + 1] == 's')
 			{
 				num_chars_printed += print_string(args);
-				num_chars_printed -= 2;
 			}
 			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
 			{
@@ -41,7 +41,6 @@ int _printf(const char *format, ...)
 				num_chars_printed += print_percent(args);
 			}
 			format[i++];
-			num_chars_printed++;
 		}
 	}
 	va_end(args);

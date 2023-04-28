@@ -33,10 +33,9 @@ int print_string(va_list args)
 }
 /**
   * print_percent - prints %
-  * @args: macro object
   * Return: no. of chars printed
   */
-int print_percent(va_list args)
+int print_percent()
 {
 	int count = 0;
 

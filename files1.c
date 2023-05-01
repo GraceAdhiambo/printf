@@ -35,7 +35,7 @@ int print_string(va_list args)
   * print_percent - prints %
   * Return: no. of chars printed
   */
-int print_percent()
+int print_percent(void)
 {
 	int count = 0;
 

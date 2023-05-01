@@ -39,10 +39,15 @@ int _printf(const char *format, ...)
 				i++;
 				num_chars_printed += print_int(args);
 			}
-			else if (format[i] == '%')
+			else if (format[i + 1] == 'b')
 			{
 				i++;
-				num_chars_printed += print_percent(args);
+				num_chars_printed += print_binary(args);
+			}
+			else if (format[i + 1] == '%')
+			{
+				i++;
+				num_chars_printed += print_percent();
 			}
 		}
 	}
